@@ -33,4 +33,9 @@ classifiers = [
 dgc-viewer = "dgc_viewer:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["dgc_viewer.py"]
+include = ["dgc_viewer.py"]
+
+[dependency-groups]
+dev = [
+    "nuitka>=2.0.0",
+]

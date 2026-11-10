@@ -10,8 +10,22 @@ dependencies = [
     { name = "pyqt6" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "nuitka" },
+]
+
 [package.metadata]
 requires-dist = [{ name = "pyqt6", specifier = ">=6.12.0" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "nuitka", specifier = ">=2.0.0" }]
+
+[[package]]
+name = "nuitka"
+version = "4.3.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5f/ec/a9a448d2c429865483fdecf3e4d60e4dcdb8738085337cbd2482ec6468ef/nuitka-4.3.5.tar.gz", hash = "sha256:ca1dabc274b95efa7a46597f464ec27484b30f32cb89872d14d66541284d4f01", size = 4780637, upload-time = "2026-11-08T13:01:00.034Z" }
 
 [[package]]
 name = "pyqt6"
