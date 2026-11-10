@@ -4,7 +4,8 @@
 
 The tool is designed for map developers and modders who need to look "under the hood" of the metadata, verify original height values, or export them for further editing in third-party software.
 
-
+<img width="451" height="376" alt="изображение" src="https://github.com/user-attachments/assets/4cb81d73-4410-4ce3-830b-83a46a73aca3" />
+<img width="451" height="376" alt="изображение" src="https://github.com/user-attachments/assets/4eb2f862-081f-4c73-a940-22798f1f14a6" />
 
 ## Features
 
