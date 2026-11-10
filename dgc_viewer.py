@@ -5,13 +5,15 @@ import struct
 import zlib
 import base64
 import math
+import logging
+import ctypes
 
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QTextEdit, QLabel, QFileDialog, QMessageBox,
     QSplitter, QCheckBox
 )
-from PyQt6.QtGui import QFont, QFontDatabase, QImage, QPixmap
+from PyQt6.QtGui import QFont, QFontDatabase, QImage, QPixmap, QIcon
 from PyQt6.QtCore import Qt
 
 
@@ -406,8 +408,22 @@ class DgcViewer(QWidget):
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+
+    if sys.platform == "win32":
+        try:
+            app_id = "stakanyash.dgcviewer.1.0"
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(app_id)
+        except Exception as e:
+            logging.warning(f"Failed to set AppUserModelID: {e}")
+
     app = QApplication(sys.argv)
     app.setApplicationName("DGC Viewer")
+    
+    icon_path = os.path.join(os.path.dirname(__file__), "src_assets", "icon.ico")
+    if os.path.exists(icon_path):
+        app.setWindowIcon(QIcon(icon_path))
+        
     viewer = DgcViewer()
     viewer.show()
     sys.exit(app.exec())
